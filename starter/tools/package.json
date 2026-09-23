@@ -1,0 +1,13 @@
+{
+  "name": "ink-film-tools",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Verification and video export for an ink film: headless system Chrome (playwright-core) and ffmpeg.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "playwright-core": "^1.63.0"
+  }
+}
