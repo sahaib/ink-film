@@ -13,3 +13,13 @@ Newest first. Each entry is a reference for the next brief: what was asked, what
 - **Decisions by the author:** thunder strikes but still loops (cage cracked, not freed) · universal faith imagery · **no tooltips/labels** — only the poem and "— Sahaib".
 - **Shipped:** a private web page (Artifact) · 1080×1080 MP4 with soundtrack, silent MP4, WAV and poster via `tools/video.mjs` · source and built page in `examples/to-my-mind/`.
 - **Numbers:** ~5,300 lines of JS; 30 fps at 1840 px on every plate; 0 errors across 360 quarter-second frames.
+
+## Car service you can see · 2026-09-23 · corporate (a car-service brand)
+
+- **Brief:** an 18 s brand film "with hooks and cuts and branding" in the trend of films drawn frame by frame in code, plus a reusable clean logo animation, plus an expressive voice-over.
+- **Reading:** the owner's one moment of no control, the keys leaving the hand, answered by the window: the phone that shows the bay. Fear to sight; resolves on the lockup.
+- **Look:** Brand-mapped (the client's purple, ink and paper; Newsreader lines, Inter colophon) · 9:16 with a 1:1 cut · 5 plates · ends on the lockup.
+- **Plates:** I keys drop (vector) · II shutter slams over the faint car · III a phone lights in the dark and a two-colour print of the client's own workshop photograph pulls on inside it, then the camera goes through the screen · IV a wheel rolls in, two approval ticks stamp on the spoken words · V the inked sting: road line into the mark, cabin drops, wordmark inks on.
+- **Decisions by the client:** the first pass (procedural geometry, thin lines) rejected for sharpness; photographs traced into prints instead; a traced close-up that read as "a wallet" replaced by a clean vector wheel; an expressive open-source voice (not flat TTS) with the picture moving to it; the logo animation also delivered clean, with alpha, for other reels.
+- **Shipped:** a private page · 1080×1920 and 1080×1080 masters with the voice, share cuts, silent cuts, WAV, SRT, posters · a separate clean sting project (in / out / mark variants, ProRes 4444 and VP9 alpha, white and purple H.264, at three sizes).
+- **Numbers:** 30.0 fps from five start points; 7 to 14 ms per frame; 0 errors across 72 quarter-second frames in each aspect; every export byte-identical on re-render.

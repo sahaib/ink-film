@@ -45,3 +45,20 @@ Read this before every film. Append to it after every film. Format: **symptom �
 - **Test both shift directions.** Boil ticks (12 fps) inside 30 fps video mean a frame's next neighbour is often near-identical: an alignment check that only compares against "different" neighbours caught late shifts but let an early shift pass. Sample the frame either side of each tick change. Count **decoded** frames — packet counts hide edit-list drops.
 - **Never feed a big PNG to a synchronous ffmpeg over stdin** — once in a few hundred runs it never saw EOF and the export hung. Write the file, pass the path.
 
+
+## From a corporate brand film, 18 s, 9:16 + 1:1 (2026-09-23)
+
+### Process
+- **Guessed geometry with thin grey lines was rejected on sight** ("not vivid, not clear, sloppy"). What passed: a two-colour PRINT traced from the client's own photographs (OpenCV posterise into paper / accent / ink rings with a subject mask, edge contours only inside the subject, a coarse tone grid for hatch texture), baked into a scene module and printed on in stages. Photos for scenes with a light subject on a dark ground; clean vector shapes for hero objects (keys, a wheel). Dark close-ups (a part in a hand, a wheel with a wrench) posterise into masses and read as "a wallet" or "a book": do not print those, draw them. → candidate for the style bible once it proves itself again.
+- **The brand token `accent` is not a role.** `K.brand` maps it onto `soul` (and `accentHot` onto `soulHot`); `C.accent` is undefined and a fill with it silently keeps the previous fillStyle. Two passes went out with the brand colour missing before anyone noticed. → use `C.soul`; the kit should warn on an unknown role.
+- **A draw-on guard.** `K.part(pts, p)` returns two points for any p > 0, so every line showed a stub before it started. Every plate now wraps it: draw only when p > 0.02. → candidate for the kit.
+- **Parallel agents need their own config.** `build.sh` now takes `FILM_CONFIG=path` so a dev build lists only the plates that exist without touching film.config.js. → promoted into this film's build.sh; carry to the starter when it proves itself again.
+- **Seam points must be in the brief, not negotiated afterward.** The iris centre for the last plate had to sit on a tick the previous plate draws; the two agents' messages crossed twice over its coordinates. State the point once, in the config and both briefs.
+- **bench.mjs in batches of six specs or fewer.** After roughly a hundred readbacks Chrome drops the canvas to software rendering and every later spec reads two to five times slow, including plates that were fine a minute earlier.
+- **`render.mjs --sheet` takes a bare file name**, written inside the out directory, not a path.
+
+### Voice-over (new)
+- **Expressive open-source voice:** Chatterbox (MIT) with the exaggeration and cfg knobs, lines spelled phonetically for the brand name; its bundled watermarker fails to import on macOS (`PerthImplicitWatermarker` is None) and needs a no-op stand-in. Word timings from whisper-timestamped; a 50 Hz loudness envelope so plates can move with the voice.
+- **The engine can carry a voice.** `FILM.voice.src` as a data-URI MP3 plays in step with the playhead, only while sound is on, resynced on seek and on the loop's wrap; plates read `FILM.voice.level(T)` and `FILM.voice.at(id, t)` to breathe with it. The exporter ducks the beds under the voice (sidechain) and mixes at 1:2 before the usual loudness chain.
+- **Pin the mix to the film's length.** A voice mix shorter than the film made `-shortest` drop 20 frames from the master while the silent cut kept them; `apad,atrim=0:total` on the mix fixed it and the frame-count gate caught it.
+- **Word times are film-global.** Subtracting a line's `at` from an already plate-local time put the keys down on "hand" instead of "keys"; an agent caught it. Write the mapping once (`FILM.voice.at`) and use it.
